@@ -8,14 +8,13 @@ import "./index.css";
 /* Route Collections */
 import App from "./App.tsx";
 import MovieDetail from "./pages/movie-detail.tsx";
+import SearchMovie from "./pages/search.tsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
+  { path: "/", element: <App /> },
   { path: "/movie/:id", element: <MovieDetail /> },
+  { path: "/movie/search", element: <SearchMovie /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
