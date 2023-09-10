@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import AppWrapper from "../ui/app-wrapper";
 import { useParams } from "react-router-dom";
 import { fetchMovieDetail } from "../services/movie.service";
+import Badge from "../ui/badge";
 
 export default function MovieDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -22,10 +23,10 @@ export default function MovieDetailPage() {
           <div className="h-4 bg-gray-300 rounded w-56"></div>
 
           <div className="flex gap-4 mt-2 animate-pulse">
-            <div className="border-2 border-black rounded-md px-4 h-6 flex items-center justify-center">
+            <div className="border-2 border-gray-900 rounded-md px-4 h-6 flex items-center justify-center">
               <div className="h-2 bg-gray-300 rounded w-14"></div>
             </div>
-            <div className="border-2 border-black rounded-md px-4 h-6 flex items-center justify-center">
+            <div className="border-2 border-gray-900 rounded-md px-4 h-6 flex items-center justify-center">
               <div className="h-2 bg-gray-300 rounded w-14"></div>
             </div>
           </div>
@@ -46,23 +47,18 @@ export default function MovieDetailPage() {
       </div>
 
       <div className="content mt-8">
-        <p className="text-2xl font-bold">{data?.title}</p>
-        <i className="text-lg">{data?.tagline}</i>
+        <p className="text-2xl font-bold text-white">{data?.title}</p>
+        <i className="text-lg text-white">{data?.tagline}</i>
 
         <div className="genres flex gap-4 mt-2">
           {data?.genres.map((genre) => (
-            <div
-              key={genre.id}
-              className="border-2 border-black rounded-md px-4 h-6 flex items-center justify-center"
-            >
-              <p className="text-sm">{genre.name}</p>
-            </div>
+            <Badge name={genre.name} key={genre.id} />
           ))}
         </div>
 
         <div className="content--desc mt-8">
-          <p className="font-bold mb-2">Description</p>
-          <p>{data?.overview}</p>
+          <p className="font-bold mb-2 text-white">Description</p>
+          <p className="text-white">{data?.overview}</p>
         </div>
       </div>
     </AppWrapper>

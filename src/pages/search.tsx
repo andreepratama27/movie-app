@@ -25,14 +25,14 @@ export default function SearchPage() {
       <div className="search-wrapper">
         <input
           type="text"
-          className="w-full h-10 rounded border-2 border-black outline-black pl-4"
+          className="w-full h-10 rounded border-2 border-gray-900 outline-gray-900 text-white bg-transparent pl-4"
           placeholder="Search movie here"
           onChange={handleChange}
         />
       </div>
 
       <div className="search-result mt-4">
-        <p className="text-lg font-bold">Search Result</p>
+        <p className="text-lg font-bold text-white">Search Result</p>
 
         <MovieList movies={data?.results} />
       </div>

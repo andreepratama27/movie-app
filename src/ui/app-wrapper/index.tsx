@@ -10,7 +10,9 @@ export default function AppWrapper({
       <Navbar />
 
       <div className="pt-20"></div>
-      <main className="max-w-xl mx-auto w-full">{children}</main>
+      <main className="max-w-xl mx-auto w-full px-4 sm:px-0 md:px-0">
+        {children}
+      </main>
     </>
   );
 }

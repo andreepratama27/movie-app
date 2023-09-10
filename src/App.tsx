@@ -13,7 +13,7 @@ function App() {
   return (
     <AppWrapper>
       <div className="content">
-        <p className="text-lg font-bold">All Movies</p>
+        <p className="text-lg font-bold text-white">All Movies</p>
 
         <MovieList movies={movies?.results} />
       </div>

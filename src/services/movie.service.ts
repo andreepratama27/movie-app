@@ -48,11 +48,14 @@ export async function searchMovie({
   query: string;
 }): Promise<ApiResponse> {
   try {
-    const response = await fetch(`${ApiUrl}/search/movie?query=${query}`, {
-      headers: {
-        Authorization: `Bearer ${ApiToken}`,
-      },
-    });
+    const response = await fetch(
+      `${ApiUrl}/search/movie?adult=false&query=${query}`,
+      {
+        headers: {
+          Authorization: `Bearer ${ApiToken}`,
+        },
+      }
+    );
     const result = await response.json();
 
     return result;
