@@ -33,7 +33,7 @@ function App() {
 
   const renderContent = () => {
     if (isLoading) {
-      return <MovieListLoading count={6} />;
+      return <MovieListLoading count={4} />;
     }
 
     return movies?.pages.map((movie, key) => (
@@ -56,7 +56,7 @@ function App() {
 
         <div className="loading" ref={ref}>
           <p className="text-xl text-white">
-            <MovieListLoading count={3} />
+            <MovieListLoading count={4} />
           </p>
         </div>
       </div>
