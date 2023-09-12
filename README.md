@@ -28,16 +28,16 @@ I create this project based on Vite + React + Typescript project. The other lib 
 # Features that Enhanced User Experience
 
 - Infinite Scroll
-I implement Infinite Scroll feature with React Intersection Observer & React Query's `useInfiniteQuery` so user can easily load the other movie with scroll.
+   - I implement Infinite Scroll feature with React Intersection Observer & React Query's `useInfiniteQuery` so user can easily load the other movie with scroll.
 
 - Debouncing the search input
-I implement this to avoid multiple API call when user typing. Instead, API call will fired once the user stop typing.
+   - I implement this to avoid multiple API call when user typing. Instead, API call will fired once the user stop typing.
 
 - Skeleton UI
-I implement Skeleton UI following with how the component are shaped instead of loading spinner or `Loading` text to enhance User Experience.
+   - I implement Skeleton UI following with how the component are shaped instead of loading spinner or `Loading` text to enhance User Experience.
 
 - Similar Movie
-I adding component to show Similar Movie based on `Movie id`
+   - I adding component to show Similar Movie based on `Movie id`
 
 # Things to Improve
 
