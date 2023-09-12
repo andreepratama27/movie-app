@@ -30,6 +30,7 @@ describe("<MovieCard /> component", () => {
 
     const movieCardTitle = await screen.findByTestId("movie-title");
 
+    expect(movieCardTitle).toBeInTheDocument();
     expect(movieCardTitle.textContent).toEqual(mockMovie.original_title);
   });
 });

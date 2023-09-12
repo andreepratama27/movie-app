@@ -1,26 +1,13 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useFetchImage } from "../../hooks/useFetchImage";
 
 export default function MovieCard({ movie }: { movie: Movie }) {
-  const [loading, setLoading] = useState(true);
-  const [currentImage, setCurrentImage] = useState("");
-
-  const fetchImage = (src: string) => {
-    const loadingImage = new Image();
-    loadingImage.src = `https://image.tmdb.org/t/p/original/${src}`;
-
-    loadingImage.onload = () => {
-      setCurrentImage(loadingImage.src);
-      setLoading(false);
-    };
-  };
-
-  useEffect(() => {
-    fetchImage(movie.poster_path);
-  }, []);
+  const { loading, currentImage } = useFetchImage({
+    path: movie.poster_path,
+  });
 
   return (
-    <div className="grid w-full rounded shadow-sm" key={movie.id}>
+    <div className="w-full rounded shadow-sm" key={movie.id}>
       <div className="content__movie-image w-full h-72 bg-black rounded-t">
         <img
           className={`

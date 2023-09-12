@@ -63,3 +63,22 @@ export async function searchMovie({
     throw error;
   }
 }
+
+export async function fetchSimilarMovie({
+  id,
+}: {
+  id: string;
+}): Promise<ApiResponse> {
+  try {
+    const response = await fetch(`${ApiUrl}/movie/${id}/similar`, {
+      headers: {
+        Authorization: `Bearer ${ApiToken}`,
+      },
+    });
+    const result = await response.json();
+
+    return result;
+  } catch (error) {
+    throw error;
+  }
+}

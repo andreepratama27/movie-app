@@ -15,6 +15,13 @@ interface Movie {
   vote_count: number;
 }
 
+interface ProductionCompany {
+  id: number;
+  logo_path: string;
+  name: string;
+  origin_country: string;
+}
+
 interface MovieDetail extends Movie {
   genres: Array<{ id: number; name: string }>;
   tagline: string;
@@ -22,12 +29,7 @@ interface MovieDetail extends Movie {
   homepage: string;
   budget: number;
   popularity: number;
-  production_companies: Array<{
-    id: number;
-    logo_path: string;
-    name: string;
-    origin_country: string;
-  }>;
+  production_companies: ProductionCompany[];
 }
 
 interface BaseResponse<T> {

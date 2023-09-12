@@ -3,6 +3,10 @@ import AppWrapper from "../ui/app-wrapper";
 import { useParams } from "react-router-dom";
 import { fetchMovieDetail } from "../services/movie.service";
 import Badge from "../ui/badge";
+import CompanyList from "../ui/company-list";
+import SimilarMovie from "../ui/similar-movie";
+import { Suspense } from "react";
+import MovieListLoading from "../ui/movie-list/loading";
 
 export default function MovieDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -61,6 +65,21 @@ export default function MovieDetailPage() {
           <div className="content--desc mt-8">
             <p className="font-bold mb-2 text-white">Description</p>
             <p className="text-white">{data?.overview}</p>
+          </div>
+
+          <div className="content--production mt-8">
+            <p className="font-bold mb-4 text-white">Production Company</p>
+            {data?.production_companies.map((company) => (
+              <CompanyList company={company} />
+            ))}
+          </div>
+
+          <div className="content--production mt-8">
+            <p className="font-bold mb-4 text-white">Similar Movies</p>
+
+            <Suspense fallback={<MovieListLoading />}>
+              <SimilarMovie id={String(data?.id)} />
+            </Suspense>
           </div>
         </div>
       </>
