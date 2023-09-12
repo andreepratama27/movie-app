@@ -19,11 +19,11 @@ For running test with coverage, run:
 # About this Project
 
 I create this project based on Vite + React + Typescript project. The other lib that I use for this project:
-- react-router-dom: for doing client side router
-- reat-query: for data-fetcher utility with cache management
-- Tailwind CSS: for styling utilities
-- Vitest: unit testing utilities. Since this project on top of Vite, I use Vitest for testing utilities.
-- React Testing Library: for React component testing
+- `react-router-dom`: for doing client side router
+- `react-query`: for data-fetcher utility with cache management
+- `Tailwind CSS`: for styling utilities
+- `Vitest`: unit testing utilities. Since this project on top of Vite, I use Vitest for testing utilities.
+- `React Testing Library`: for React component testing
 
 # Features that Enhanced User Experience
 
