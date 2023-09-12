@@ -1,27 +1,45 @@
-# React + TypeScript + Vite
+# How to run this project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Clone this project to your machine
+- Make sure node / npm already installed in your machine.
+- Run `npm install` or `yarn install` or `pnpm install` (for this project, I prefer to use pnpm).
+- After installation, run `pnpm dev`
+- Open the project in your browser with url localhost:5173
 
-Currently, two official plugins are available:
+This project also can accessed within this url.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# How to test this project
 
-## Expanding the ESLint configuration
+From your terminal, run:
+- `npm test` or `yarn test` or `pnpm test`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+For running test with coverage, run:
+- `npm test:coverage` or `yarn test:coverage` or `pnpm test:coverage`
 
-- Configure the top-level `parserOptions` property like this:
+# About this Project
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+I create this project based on Vite + React + Typescript project. The other lib that I use for this project:
+- react-router-dom: for doing client side router
+- reat-query: for data-fetcher utility with cache management
+- Tailwind CSS: for styling utilities
+- Vitest: unit testing utilities. Since this project on top of Vite, I use Vitest for testing utilities.
+- React Testing Library: for React component testing
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Features that Enhanced User Experience
+
+- Infinite Scroll
+I implement Infinite Scroll feature with React Intersection Observer & React Query's `useInfiniteQuery` so user can easily load the other movie with scroll.
+
+- Debouncing the search input
+I implement this to avoid multiple API call when user typing. Instead, API call will fired once the user stop typing.
+
+- Skeleton UI
+I implement Skeleton UI following with how the component are shaped instead of loading spinner or `Loading` text to enhance User Experience.
+
+- Similar Movie
+I adding component to show Similar Movie based on `Movie id`
+
+# Things to Improve
+
+Here also I take some note on feature that still not implemented but good to be implemented:
+- mocking REST API with `msw`
